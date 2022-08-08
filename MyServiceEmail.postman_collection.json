@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "d6743f81-d207-4619-949c-51b1fc908371",
+		"name": "MyServiceEmail",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21003423"
+	},
+	"item": [
+		{
+			"name": "Send a notification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"contactID\":\"1\",\r\n    \"title\":\"My first mail\",\r\n    \"text\":\"My first mail text\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/notification",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send a notification to a non-existent student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"contactID\":\"5\",\r\n    \"title\":\"My first mail\",\r\n    \"text\":\"My first mail text\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/notification",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send email with a wrong payload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"contactID\":\"1\",\r\n    \"title\":\"My first mail\",\r\n    \"tegraxt\":\"My first mail text\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/notification",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"notification"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
